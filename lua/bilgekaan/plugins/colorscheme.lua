@@ -39,4 +39,9 @@ return {
   },
   { "catppuccin/nvim", name = "catppuccin" },
   { "xiantang/darcula-dark.nvim", name = "darcula-dark" },
+  { "rebelot/kanagawa.nvim", name = "kanagawa" },
+  { "projekt0n/github-nvim-theme", name = "github-theme" },
+  { "craftzdog/solarized-osaka.nvim", opts = {
+    transparent = false,
+  } },
 }
