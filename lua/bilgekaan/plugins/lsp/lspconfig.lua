@@ -19,15 +19,13 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     ----------------------
-    -- Disable diagnostics 
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = false,  -- Disable virtual text for diagnostics
-      }
-    )
+    -- Disable diagnostics
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = false, -- Disable virtual text for diagnostics
+    })
     vim.diagnostic.config({
-      virtual_text = false,    -- Disable inline diagnostics text
-      severity_sort = true,    -- Sort by severity
+      virtual_text = false, -- Disable inline diagnostics text
+      severity_sort = true, -- Sort by severity
       float = {
         border = "rounded",
       },
@@ -38,7 +36,6 @@ return {
       },
     })
     -----------------------
-
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -129,7 +126,7 @@ return {
             Lua = {
               -- make the language server recognize "vim" global
               diagnostics = {
-                disable = { "missing-fields"},
+                disable = { "missing-fields" },
                 globals = { "vim" },
               },
               completion = {

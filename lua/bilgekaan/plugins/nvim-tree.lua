@@ -9,9 +9,13 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     nvimtree.setup({
+      update_focused_file = {
+        enable = true,
+      },
       view = {
         width = 30,
         relativenumber = true,
+        preserve_window_proportions = true,
         --side = "right",
       },
       -- change folder arrow icons
@@ -39,16 +43,6 @@ return {
           },
         },
       },
-      -- disable window_picker for
-      -- explorer to work well with
-      -- window splits
-      -- actions = {
-      -- open_file = {
-      -- window_picker = {
-      -- enable = false,
-      --},
-      -- },
-      --},
       filters = {
         custom = { ".DS_Store" },
       },
