@@ -22,8 +22,19 @@ return {
         icons = {
           glyphs = {
             folder = {
-              arrow_closed = "", -- arrow when folder is closed
-              arrow_open = "", -- arrow when folder is open
+              default = "",
+              open = "",
+              empty = "",
+              empty_open = "",
+            },
+            git = {
+              unstaged = "",
+              staged = "",
+              unmerged = "",
+              renamed = "",
+              untracked = "",
+              deleted = "",
+              ignored = "󰴲",
             },
           },
         },
@@ -31,12 +42,12 @@ return {
       -- disable window_picker for
       -- explorer to work well with
       -- window splits
-     -- actions = {
-       -- open_file = {
-         -- window_picker = {
-           -- enable = false,
-          --},
-       -- },
+      -- actions = {
+      -- open_file = {
+      -- window_picker = {
+      -- enable = false,
+      --},
+      -- },
       --},
       filters = {
         custom = { ".DS_Store" },
@@ -47,13 +58,12 @@ return {
     })
 
     -- set keymaps
-    
-local keymap = vim.keymap
 
--- Toggle NvimTree (File Explorer) with Ctrl+n
-keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
--- Toggle NvimTree for the current file with Ctrl+Shift+n
-keymap.set("n", "<leader>nf", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
+    local keymap = vim.keymap
 
-   end
+    -- Toggle NvimTree (File Explorer) with Ctrl+n
+    keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+    -- Toggle NvimTree for the current file with Ctrl+Shift+n
+    keymap.set("n", "<leader>nf", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
+  end,
 }
