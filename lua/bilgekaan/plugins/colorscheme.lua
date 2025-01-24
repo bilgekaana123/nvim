@@ -37,11 +37,21 @@ return {
       -- vim.cmd([[colorscheme tokyonight]])
     end,
   },
+  {
+    "xiantang/darcula-dark.nvim",
+    config = function()
+      require("darcula").setup({
+        override = function(c)
+          return {
+            dark = "#1E1F22",
+          }
+        end,
+      })
+    end,
+  },
   { "catppuccin/nvim", name = "catppuccin" },
-  { "xiantang/darcula-dark.nvim", name = "darcula-dark" },
-  { "rebelot/kanagawa.nvim", name = "kanagawa" },
   { "projekt0n/github-nvim-theme", name = "github-theme" },
-  { "craftzdog/solarized-osaka.nvim", opts = {
+  { "craftzdog/solarized-osaka.nvim", name = "solarized-osaka", opts = {
     transparent = false,
   } },
 }

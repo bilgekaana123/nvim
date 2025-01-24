@@ -44,11 +44,12 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store" },
+        -- custom = { ".DS_Store" },
+        dotfiles = false,
       },
-      git = {
-        ignore = false,
-      },
+      -- git = {
+      --   ignore = false,
+      -- },
     })
 
     -- set keymaps

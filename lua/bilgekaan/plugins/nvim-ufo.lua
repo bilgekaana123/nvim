@@ -23,4 +23,15 @@ return {
       return { "treesitter", "indent" }
     end,
   },
+
+  -- -- Add these lines to customize the fold colors
+  -- config = function()
+  --   -- Set custom fold background and foreground colors
+  --   vim.cmd [[
+  --     hi default UfoFoldedFg guifg=#FFFFFF    " Set the folded line text color (foreground)
+  --     hi default UfoFoldedBg guibg=#333333    " Set the folded line background color
+  --   ]]
+  --
+  --   -- Additional customizations can be done here if needed
+  -- end,
 }
