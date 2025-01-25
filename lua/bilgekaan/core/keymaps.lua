@@ -1,7 +1,7 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap 
+local keymap = vim.keymap
 
 keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 keymap.set("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
@@ -20,9 +20,8 @@ keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scr
 
 keymap.set("n", "<C-p>", '"0p', { noremap = true, silent = true, desc = "Paste from yank register" })
 
-
-keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Go to next buffer" }) 
-keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Go to previous buffer" }) 
+keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Go to next buffer" })
+keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
 keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })
 
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
