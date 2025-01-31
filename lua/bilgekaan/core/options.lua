@@ -1,4 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 local opt = vim.opt
 
