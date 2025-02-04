@@ -3,9 +3,6 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
-keymap.set("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
-
 -- use jk or jj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })
