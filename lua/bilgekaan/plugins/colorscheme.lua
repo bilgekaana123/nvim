@@ -1,21 +1,11 @@
 return {
   {
+    "rktjmp/lush.nvim",
+    priority = 1000, -- Load this before color schemes
+  },
+  {
     "folke/tokyonight.nvim",
   },
-  -- {
-  --   "xiantang/darcula-dark.nvim",
-  --   config = function()
-  --     require("darcula").setup({
-  --       override = function(c)
-  --         return {
-  --           dark = "#1E1F22",
-  --         }
-  --       end,
-  --     })
-  --   end,
-  -- },
-  --
-
   {
     "navarasu/onedark.nvim",
     config = function()
