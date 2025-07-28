@@ -58,6 +58,8 @@ return {
 
     -- Toggle NvimTree (File Explorer) with Ctrl+n
     keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+    -- Collapse all folders in NvimTree with Ctrl+C
+    keymap.set("n", "<C-c>", ":NvimTreeCollapse<CR>", { noremap = true, silent = true })
     -- Toggle NvimTree for the current file with Ctrl+Shift+n
     keymap.set("n", "<leader>nf", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
   end,

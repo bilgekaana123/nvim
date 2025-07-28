@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
-    config = function()
+  config = function()
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
@@ -39,6 +39,7 @@ return {
         "query",
         "vimdoc",
         "c",
+        "python",
       },
       incremental_selection = {
         enable = true,

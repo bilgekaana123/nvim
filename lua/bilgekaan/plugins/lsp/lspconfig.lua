@@ -20,17 +20,13 @@ return {
 
     ----------------------
     -- Disable diagnostics
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = false, -- Disable virtual text for diagnostics
-    })
+    -- Disable virtual text and configure diagnostic display
     vim.diagnostic.config({
-      virtual_text = false, -- Disable inline diagnostics text
-      severity_sort = true, -- Sort by severity
+      virtual_text = false,
+      severity_sort = true,
       float = {
         border = "rounded",
       },
-      -- Use this section to suppress specific messages
-      -- e.g., "unused variable" for Lua or other languages.
       severity = {
         min = vim.diagnostic.severity.WARN, -- Show only warnings and errors
       },
@@ -73,10 +69,14 @@ return {
         keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
         opts.desc = "Go to previous diagnostic"
-        keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+        keymap.set("n", "[d", function()
+          vim.diagnostic.jump({ count = -1, float = true })
+        end, opts)
 
         opts.desc = "Go to next diagnostic"
-        keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+        keymap.set("n", "]d", function()
+          vim.diagnostic.jump({ count = 1, float = true })
+        end, opts)
 
         opts.desc = "Show workspace diagnostics"
         keymap.set("n", "<leader>wd", "<cmd>Telescope diagnostics<CR>", opts) -- show diagnostics for workspace
@@ -134,6 +134,21 @@ return {
               },
               completion = {
                 callSnippet = "Replace",
+              },
+            },
+          },
+        })
+      end,
+      ["pyright"] = function()
+        -- configure pyright language server for Python
+        lspconfig["pyright"].setup({
+          capabilities = capabilities,
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic", -- could be "off", "basic", "strict"
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
               },
             },
           },
